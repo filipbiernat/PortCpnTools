@@ -110,6 +110,15 @@ product STATEK * INT;</layout>
           <layout>colset STATEK_NA_MORZU
  = product STATEK * INT * PORT_DOC;</layout>
         </color>
+        <color id="ID1414207140">
+          <id>STATEK_PRZY_BRZEGU</id>
+          <product>
+            <id>STATEK</id>
+            <id>INT</id>
+          </product>
+          <layout>colset STATEK_PRZY_BRZEGU
+ = product STATEK * INT;</layout>
+        </color>
         <var id="ID1413273564">
           <type>
             <id>STATEK</id>
@@ -131,7 +140,8 @@ product STATEK * INT;</layout>
           <id>licz</id>
           <id>miejsc</id>
           <id>dystans</id>
-          <layout>var licz, miejsc, dystans: INT;</layout>
+          <id>czasCzekania</id>
+          <layout>var licz, miejsc, dystans, czasCzekania: INT;</layout>
         </var>
         <var id="ID1413513096">
           <type>
@@ -176,8 +186,8 @@ product STATEK * INT;</layout>
                 anchor.vertical="3"/>
         </marking>
         <type id="ID1414078461">
-          <posattr x="776.000000"
-                   y="217.000000"/>
+          <posattr x="648.000000"
+                   y="205.771986"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -201,11 +211,10 @@ product STATEK * INT;</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">1`(SAR, 3, Port1)++
-1`(SAR, 0, Port2)++
-1`(Barka, 0, Port1)++
+                version="4.0.1">1`(SAR, 0, Port2)++
 1`(Barka, 1, Port1)++
-1`(Barka, 2, Port2)++
+1`(Barka, 2, Port1)++
+1`(Barka, 0, Port2)++
 4`(Zaglowka, 1, Port1)++
 4`(Zaglowka, 0, Port2)++
 2`(Zaglowka, 3, Port1)++
@@ -401,7 +410,7 @@ product STATEK * INT;</layout>
                   filled="false"/>
         <lineattr colour="Black"
                   thick="1"
-                  type="Solid"/>
+                  type="solid"/>
         <textattr colour="Black"
                   bold="false"/>
         <text>Rejs</text>
@@ -411,7 +420,7 @@ product STATEK * INT;</layout>
                  y="-3.000000"/>
         <cond id="ID1414169399">
           <posattr x="648.000000"
-                   y="411.257329"/>
+                   y="411.257328"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -425,7 +434,7 @@ product STATEK * INT;</layout>
         </cond>
         <time id="ID1414169400">
           <posattr x="741.032567"
-                   y="411.257329"/>
+                   y="411.257328"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -439,7 +448,7 @@ product STATEK * INT;</layout>
         </time>
         <code id="ID1414169401">
           <posattr x="761.032567"
-                   y="323.742671"/>
+                   y="323.742672"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -453,7 +462,7 @@ product STATEK * INT;</layout>
         </code>
         <priority id="ID1414169403">
           <posattr x="531.467433"
-                   y="344.742671"/>
+                   y="344.742672"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -511,7 +520,7 @@ product STATEK * INT;</layout>
         </bendpoint>
         <annot id="ID1414143049">
           <posattr x="563.000000"
-                   y="86.000000"/>
+                   y="88.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -568,7 +577,7 @@ product STATEK * INT;</layout>
                     bold="false"/>
         </bendpoint>
         <annot id="ID1414143913">
-          <posattr x="485.000000"
+          <posattr x="475.000000"
                    y="-53.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
@@ -626,8 +635,8 @@ product STATEK * INT;</layout>
                     bold="false"/>
         </bendpoint>
         <annot id="ID1414160844">
-          <posattr x="729.000000"
-                   y="90.000000"/>
+          <posattr x="715.500000"
+                   y="137.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -637,7 +646,7 @@ product STATEK * INT;</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">1`(statek, 4, portDoc)</text>
+                version="4.0.1">1`(statek, dystans, portDoc)</text>
         </annot>
       </arc>
       <arc id="ID1414161768"
@@ -684,7 +693,7 @@ product STATEK * INT;</layout>
                     bold="false"/>
         </bendpoint>
         <annot id="ID1414161769">
-          <posattr x="806.000000"
+          <posattr x="827.000000"
                    y="-53.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
@@ -695,7 +704,7 @@ product STATEK * INT;</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">1`(statek, 4, portDoc)</text>
+                version="4.0.1">1`(statek, dystans, portDoc)</text>
         </annot>
       </arc>
       <arc id="ID1414170667"
@@ -779,19 +788,19 @@ product STATEK * INT;</layout>
                   bold="false"/>
         <text>KolejkaDoWplynieciaWyplyniecia</text>
         <ellipse w="212.000000"
-                 h="89.500000"/>
+                 h="582.000000"/>
         <token x="-10.000000"
                y="0.000000"/>
-        <marking x="-82.500000"
-                 y="53.000000"
+        <marking x="-63.750000"
+                 y="-54.500000"
                  hidden="false">
           <snap snap_id="0"
                 anchor.horizontal="2"
-                anchor.vertical="2"/>
+                anchor.vertical="1"/>
         </marking>
         <type id="ID1413993704">
-          <posattr x="-37.000000"
-                   y="-82.750000"/>
+          <posattr x="-45.000000"
+                   y="-388.250000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -805,7 +814,7 @@ product STATEK * INT;</layout>
         </type>
         <initmark id="ID1413993705">
           <posattr x="-28.000000"
-                   y="-225.000000"/>
+                   y="-471.250000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -836,7 +845,7 @@ product STATEK * INT;</layout>
                   bold="false"/>
         <text>WolnychMiejsc</text>
         <ellipse w="212.000000"
-                 h="89.500000"/>
+                 h="157.000000"/>
         <token x="-201.000000"
                y="-58.122856"/>
         <marking x="-4.000000"
@@ -848,7 +857,7 @@ product STATEK * INT;</layout>
         </marking>
         <type id="ID1413993707">
           <posattr x="-88.500000"
-                   y="-542.000000"/>
+                   y="-575.750000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -862,7 +871,7 @@ product STATEK * INT;</layout>
         </type>
         <initmark id="ID1413993708">
           <posattr x="43.500000"
-                   y="-544.000000"/>
+                   y="-577.750000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -872,8 +881,8 @@ product STATEK * INT;</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">1`(Barka, 2)++
-1`(Zaglowka, 50)</text>
+                version="4.0.1">1`(Barka, 1)++
+1`(Zaglowka, 45)</text>
         </initmark>
       </place>
       <place id="ID1413993709">
@@ -963,11 +972,11 @@ product STATEK * INT;</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">STATEK</text>
+                version="4.0.1">STATEK_PRZY_BRZEGU</text>
         </type>
         <initmark id="ID1413993714">
           <posattr x="-1138.000000"
-                   y="372.000000"/>
+                   y="379.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -977,9 +986,10 @@ product STATEK * INT;</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">1`SAR++
-1`Barka++
-5`Zaglowka</text>
+                version="4.0.1">1`(SAR, 3)++
+1`(Barka, 0)++
+2`(Zaglowka, 2)++
+3`(Zaglowka, 3)</text>
         </initmark>
       </place>
       <place id="ID1413993843">
@@ -1035,8 +1045,8 @@ product STATEK * INT;</layout>
         </initmark>
         <port id="ID1413994025"
               type="I/O">
-          <posattr x="681.000000"
-                   y="-118.000000"/>
+          <posattr x="756.000000"
+                   y="-106.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -1660,7 +1670,7 @@ then zablokBarek=0 else true]</text>
              h="89.500000"/>
         <binding x="7.200000"
                  y="-3.000000"/>
-        <cond id="ID1413993764">
+        <cond id="ID1414231857">
           <posattr x="-1267.000000"
                    y="-19.250000"/>
           <fillattr colour="White"
@@ -1717,6 +1727,80 @@ then zablokBarek=0 else true]</text>
                 version="4.0.1"/>
         </priority>
       </trans>
+      <trans id="ID1414207441"
+             explicit="false">
+        <posattr x="-1543.000000"
+                 y="304.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <text>Oczekiwanie</text>
+        <box w="157.065134"
+             h="77.014657"/>
+        <binding x="7.200000"
+                 y="-3.000000"/>
+        <cond id="ID1414207442">
+          <posattr x="-1543.000000"
+                   y="353.507328"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">[czasCzekania &gt; 0]</text>
+        </cond>
+        <time id="ID1414207443">
+          <posattr x="-1449.967433"
+                   y="353.507328"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1"/>
+        </time>
+        <code id="ID1414207444">
+          <posattr x="-1429.967433"
+                   y="233.492672"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1"/>
+        </code>
+        <priority id="ID1414207446">
+          <posattr x="-1659.532567"
+                   y="254.492672"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1"/>
+        </priority>
+      </trans>
       <arc id="ID1413993769"
            orientation="TtoP"
            order="1">
@@ -1735,7 +1819,7 @@ then zablokBarek=0 else true]</text>
         <transend idref="ID1413993763"/>
         <placeend idref="ID1413993712"/>
         <annot id="ID1413993770">
-          <posattr x="-1184.000000"
+          <posattr x="-1249.500000"
                    y="89.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
@@ -1746,7 +1830,7 @@ then zablokBarek=0 else true]</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">1`statek</text>
+                version="4.0.1">1`(statek, discrete(2, 4) : int)</text>
         </annot>
       </arc>
       <arc id="ID1413993771"
@@ -1780,8 +1864,8 @@ then zablokBarek=0 else true]</text>
                     bold="false"/>
         </bendpoint>
         <annot id="ID1413993772">
-          <posattr x="-159.000000"
-                   y="-291.000000"/>
+          <posattr x="-233.000000"
+                   y="-305.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -1874,7 +1958,7 @@ then zablokBarek=0 else true]</text>
                     bold="false"/>
         </bendpoint>
         <annot id="ID1413993776">
-          <posattr x="188.000000"
+          <posattr x="189.000000"
                    y="-45.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
@@ -2007,7 +2091,7 @@ then zablokBarek=0 else true]</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">1`statek</text>
+                version="4.0.1">1`(statek, 0)</text>
         </annot>
       </arc>
       <arc id="ID1413993783"
@@ -2086,7 +2170,7 @@ then zablokBarek=0 else true]</text>
                     bold="false"/>
         </bendpoint>
         <annot id="ID1413993786">
-          <posattr x="-275.000000"
+          <posattr x="-255.000000"
                    y="-123.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
@@ -2133,8 +2217,8 @@ then zablokBarek=0 else true]</text>
                     bold="false"/>
         </bendpoint>
         <annot id="ID1413993788">
-          <posattr x="-373.000000"
-                   y="-52.000000"/>
+          <posattr x="-271.000000"
+                   y="-45.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -2191,7 +2275,7 @@ then zablokBarek=0 else true]</text>
                     bold="false"/>
         </bendpoint>
         <annot id="ID1413993790">
-          <posattr x="-305.000000"
+          <posattr x="-312.000000"
                    y="-465.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
@@ -2249,7 +2333,7 @@ then zablokBarek=0 else true]</text>
                     bold="false"/>
         </bendpoint>
         <annot id="ID1413993792">
-          <posattr x="181.000000"
+          <posattr x="207.000000"
                    y="-481.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
@@ -2339,8 +2423,8 @@ then zablokBarek=0 else true]</text>
                     bold="false"/>
         </bendpoint>
         <annot id="ID1413993796">
-          <posattr x="219.500000"
-                   y="-376.000000"/>
+          <posattr x="205.000000"
+                   y="-371.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -2429,7 +2513,7 @@ then zablokBarek=0 else true]</text>
                     bold="false"/>
         </bendpoint>
         <annot id="ID1413993800">
-          <posattr x="192.000000"
+          <posattr x="205.000000"
                    y="-410.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
@@ -2474,7 +2558,7 @@ then zablokBarek=0 else true]</text>
                     bold="false"/>
         </bendpoint>
         <annot id="ID1413993802">
-          <posattr x="-298.000000"
+          <posattr x="-308.000000"
                    y="-411.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
@@ -2507,7 +2591,7 @@ then zablokBarek=0 else true]</text>
         <placeend idref="ID1413993703"/>
         <bendpoint id="ID1413993668"
                    serial="1">
-          <posattr x="-88.000000"
+          <posattr x="-84.000000"
                    y="304.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
@@ -2519,7 +2603,7 @@ then zablokBarek=0 else true]</text>
                     bold="false"/>
         </bendpoint>
         <annot id="ID1413993804">
-          <posattr x="-120.000000"
+          <posattr x="-117.000000"
                    y="316.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
@@ -2577,8 +2661,8 @@ then zablokBarek=0 else true]</text>
                     bold="false"/>
         </bendpoint>
         <annot id="ID1413993806">
-          <posattr x="237.000000"
-                   y="-464.000000"/>
+          <posattr x="206.000000"
+                   y="-507.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -2667,8 +2751,8 @@ then zablokBarek=0 else true]</text>
                     bold="false"/>
         </bendpoint>
         <annot id="ID1413993810">
-          <posattr x="279.000000"
-                   y="-237.000000"/>
+          <posattr x="187.000000"
+                   y="-248.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -2789,7 +2873,7 @@ then zablokBarek=0 else true]</text>
                     bold="false"/>
         </bendpoint>
         <annot id="ID1413993816">
-          <posattr x="285.000000"
+          <posattr x="187.000000"
                    y="-213.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
@@ -2834,8 +2918,8 @@ then zablokBarek=0 else true]</text>
                     bold="false"/>
         </bendpoint>
         <annot id="ID1413993818">
-          <posattr x="164.000000"
-                   y="119.000000"/>
+          <posattr x="183.000000"
+                   y="105.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -2879,7 +2963,7 @@ then zablokBarek=0 else true]</text>
                     bold="false"/>
         </bendpoint>
         <annot id="ID1413993820">
-          <posattr x="213.000000"
+          <posattr x="214.000000"
                    y="-436.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
@@ -2969,7 +3053,7 @@ then zablokBarek=0 else true]</text>
                     bold="false"/>
         </bendpoint>
         <annot id="ID1413993824">
-          <posattr x="-276.000000"
+          <posattr x="-266.000000"
                    y="123.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
@@ -3014,8 +3098,8 @@ then zablokBarek=0 else true]</text>
                     bold="false"/>
         </bendpoint>
         <annot id="ID1413993826">
-          <posattr x="-318.500000"
-                   y="-376.000000"/>
+          <posattr x="-303.000000"
+                   y="-370.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -3181,8 +3265,8 @@ then zablokBarek=0 else true]</text>
                     bold="false"/>
         </bendpoint>
         <annot id="ID1413993834">
-          <posattr x="154.000000"
-                   y="-326.000000"/>
+          <posattr x="212.000000"
+                   y="-307.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -3275,7 +3359,7 @@ then zablokBarek=0 else true]</text>
                     bold="false"/>
         </bendpoint>
         <annot id="ID1413993838">
-          <posattr x="-279.000000"
+          <posattr x="-269.000000"
                    y="104.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
@@ -3378,8 +3462,8 @@ then zablokBarek=0 else true]</text>
                     bold="false"/>
         </bendpoint>
         <annot id="ID1413993842">
-          <posattr x="-326.500000"
-                   y="-463.000000"/>
+          <posattr x="-309.000000"
+                   y="-495.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -3479,7 +3563,7 @@ then zablokBarek=0 else true]</text>
           <textattr colour="Maroon"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">1`(SAR, 4, Port1)</text>
+                version="4.0.1">1`(SAR, 3, Port1)</text>
         </annot>
       </arc>
       <arc id="ID1413993850"
@@ -3524,7 +3608,7 @@ then zablokBarek=0 else true]</text>
           <textattr colour="Fucia"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">1`(Zaglowka, 4, portDoc)</text>
+                version="4.0.1">1`(Zaglowka, 5, portDoc)</text>
         </annot>
       </arc>
       <arc id="ID1414167346"
@@ -3572,190 +3656,71 @@ then zablokBarek=0 else true]</text>
                 version="4.0.1">1`(statek, 0, Port1)</text>
         </annot>
       </arc>
+      <arc id="ID1414207997"
+           orientation="PtoT"
+           order="2">
+        <posattr x="0.000000"
+                 y="0.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <arrowattr headsize="1.200000"
+                   currentcyckle="2"/>
+        <transend idref="ID1414207441"/>
+        <placeend idref="ID1413993712"/>
+        <annot id="ID1414213947">
+          <posattr x="-1360.000000"
+                   y="322.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">1`(statek, czasCzekania)</text>
+        </annot>
+      </arc>
+      <arc id="ID1414208074"
+           orientation="TtoP"
+           order="1">
+        <posattr x="0.000000"
+                 y="0.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <arrowattr headsize="1.200000"
+                   currentcyckle="2"/>
+        <transend idref="ID1414207441"/>
+        <placeend idref="ID1413993712"/>
+        <annot id="ID1414208075">
+          <posattr x="-1359.000000"
+                   y="286.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">1`(statek, czasCzekania-1)</text>
+        </annot>
+      </arc>
       <constraints/>
-      <group id="ID1414018888"
-             name="Group 1">
-        <group_elm idref="ID1413993712"/>
-        <group_elm idref="ID1413993713"/>
-        <group_elm idref="ID1413993714"/>
-        <group_elm idref="ID1413993763"/>
-        <group_elm idref="ID1413993766"/>
-        <group_elm idref="ID1413993768"/>
-        <group_elm idref="ID1413993764"/>
-        <group_elm idref="ID1413993765"/>
-        <group_elm idref="ID1413993769"/>
-        <group_elm idref="ID1413993770"/>
-        <group_elm idref="ID1413993709"/>
-        <group_elm idref="ID1413993710"/>
-        <group_elm idref="ID1413993711"/>
-        <group_elm idref="ID1413993813"/>
-        <group_elm idref="ID1413993814"/>
-        <group_elm idref="ID1413993751"/>
-        <group_elm idref="ID1413993754"/>
-        <group_elm idref="ID1413993756"/>
-        <group_elm idref="ID1413993752"/>
-        <group_elm idref="ID1413993753"/>
-        <group_elm idref="ID1413993831"/>
-        <group_elm idref="ID1413993832"/>
-        <group_elm idref="ID1413993745"/>
-        <group_elm idref="ID1413993748"/>
-        <group_elm idref="ID1413993750"/>
-        <group_elm idref="ID1413993746"/>
-        <group_elm idref="ID1413993747"/>
-        <group_elm idref="ID1413993839"/>
-        <group_elm idref="ID1413993685"/>
-        <group_elm idref="ID1413993840"/>
-        <group_elm idref="ID1413993757"/>
-        <group_elm idref="ID1413993760"/>
-        <group_elm idref="ID1413993762"/>
-        <group_elm idref="ID1413993758"/>
-        <group_elm idref="ID1413993759"/>
-        <group_elm idref="ID1413993797"/>
-        <group_elm idref="ID1413993665"/>
-        <group_elm idref="ID1413993798"/>
-        <group_elm idref="ID1413993703"/>
-        <group_elm idref="ID1413993704"/>
-        <group_elm idref="ID1413993705"/>
-        <group_elm idref="ID1413993771"/>
-        <group_elm idref="ID1413993651"/>
-        <group_elm idref="ID1413993772"/>
-        <group_elm idref="ID1413993779"/>
-        <group_elm idref="ID1413993655"/>
-        <group_elm idref="ID1413993780"/>
-        <group_elm idref="ID1413993785"/>
-        <group_elm idref="ID1413993657"/>
-        <group_elm idref="ID1413993786"/>
-        <group_elm idref="ID1413993787"/>
-        <group_elm idref="ID1413993658"/>
-        <group_elm idref="ID1413993788"/>
-        <group_elm idref="ID1413993811"/>
-        <group_elm idref="ID1413993673"/>
-        <group_elm idref="ID1413993812"/>
-        <group_elm idref="ID1413993823"/>
-        <group_elm idref="ID1413993678"/>
-        <group_elm idref="ID1413993824"/>
-        <group_elm idref="ID1413993827"/>
-        <group_elm idref="ID1413993680"/>
-        <group_elm idref="ID1413993828"/>
-        <group_elm idref="ID1413993829"/>
-        <group_elm idref="ID1413993681"/>
-        <group_elm idref="ID1413993830"/>
-        <group_elm idref="ID1413993837"/>
-        <group_elm idref="ID1413993684"/>
-        <group_elm idref="ID1413993838"/>
-        <group_elm idref="ID1413993819"/>
-        <group_elm idref="ID1413993676"/>
-        <group_elm idref="ID1413993820"/>
-        <group_elm idref="ID1413993739"/>
-        <group_elm idref="ID1413993742"/>
-        <group_elm idref="ID1413993744"/>
-        <group_elm idref="ID1413993740"/>
-        <group_elm idref="ID1413993741"/>
-        <group_elm idref="ID1413993809"/>
-        <group_elm idref="ID1413993672"/>
-        <group_elm idref="ID1413993810"/>
-        <group_elm idref="ID1413993815"/>
-        <group_elm idref="ID1413993674"/>
-        <group_elm idref="ID1413993816"/>
-        <group_elm idref="ID1413993833"/>
-        <group_elm idref="ID1413993682"/>
-        <group_elm idref="ID1413993834"/>
-        <group_elm idref="ID1413993733"/>
-        <group_elm idref="ID1413993736"/>
-        <group_elm idref="ID1413993738"/>
-        <group_elm idref="ID1413993734"/>
-        <group_elm idref="ID1413993735"/>
-        <group_elm idref="ID1413993775"/>
-        <group_elm idref="ID1413993653"/>
-        <group_elm idref="ID1413993776"/>
-        <group_elm idref="ID1413993821"/>
-        <group_elm idref="ID1413993677"/>
-        <group_elm idref="ID1413993822"/>
-        <group_elm idref="ID1413993835"/>
-        <group_elm idref="ID1413993683"/>
-        <group_elm idref="ID1413993836"/>
-        <group_elm idref="ID1413993727"/>
-        <group_elm idref="ID1413993730"/>
-        <group_elm idref="ID1413993732"/>
-        <group_elm idref="ID1413993728"/>
-        <group_elm idref="ID1413993729"/>
-        <group_elm idref="ID1413993777"/>
-        <group_elm idref="ID1413993654"/>
-        <group_elm idref="ID1413993778"/>
-        <group_elm idref="ID1413993817"/>
-        <group_elm idref="ID1413993675"/>
-        <group_elm idref="ID1413993818"/>
-        <group_elm idref="ID1413993706"/>
-        <group_elm idref="ID1413993707"/>
-        <group_elm idref="ID1413993708"/>
-        <group_elm idref="ID1413993773"/>
-        <group_elm idref="ID1413993652"/>
-        <group_elm idref="ID1413993774"/>
-        <group_elm idref="ID1413993789"/>
-        <group_elm idref="ID1413993659"/>
-        <group_elm idref="ID1413993660"/>
-        <group_elm idref="ID1413993790"/>
-        <group_elm idref="ID1413993791"/>
-        <group_elm idref="ID1413993661"/>
-        <group_elm idref="ID1413993662"/>
-        <group_elm idref="ID1413993792"/>
-        <group_elm idref="ID1413993795"/>
-        <group_elm idref="ID1413993664"/>
-        <group_elm idref="ID1413993796"/>
-        <group_elm idref="ID1413993799"/>
-        <group_elm idref="ID1413993666"/>
-        <group_elm idref="ID1413993800"/>
-        <group_elm idref="ID1413993801"/>
-        <group_elm idref="ID1413993667"/>
-        <group_elm idref="ID1413993802"/>
-        <group_elm idref="ID1413993805"/>
-        <group_elm idref="ID1413993669"/>
-        <group_elm idref="ID1413993670"/>
-        <group_elm idref="ID1413993806"/>
-        <group_elm idref="ID1413993825"/>
-        <group_elm idref="ID1413993679"/>
-        <group_elm idref="ID1413993826"/>
-        <group_elm idref="ID1413993841"/>
-        <group_elm idref="ID1413993686"/>
-        <group_elm idref="ID1413993687"/>
-        <group_elm idref="ID1413993842"/>
-        <group_elm idref="ID1413993843"/>
-        <group_elm idref="ID1413993844"/>
-        <group_elm idref="ID1413993845"/>
-        <group_elm idref="ID1413993846"/>
-        <group_elm idref="ID1413993688"/>
-        <group_elm idref="ID1413993847"/>
-        <group_elm idref="ID1413993848"/>
-        <group_elm idref="ID1413993689"/>
-        <group_elm idref="ID1413993849"/>
-        <group_elm idref="ID1413993850"/>
-        <group_elm idref="ID1413993690"/>
-        <group_elm idref="ID1413993851"/>
-        <group_elm idref="ID1413993721"/>
-        <group_elm idref="ID1413993724"/>
-        <group_elm idref="ID1413993726"/>
-        <group_elm idref="ID1413993722"/>
-        <group_elm idref="ID1413993723"/>
-        <group_elm idref="ID1413993793"/>
-        <group_elm idref="ID1413993663"/>
-        <group_elm idref="ID1413993794"/>
-        <group_elm idref="ID1413993807"/>
-        <group_elm idref="ID1413993671"/>
-        <group_elm idref="ID1413993808"/>
-        <group_elm idref="ID1413993715"/>
-        <group_elm idref="ID1413993718"/>
-        <group_elm idref="ID1413993720"/>
-        <group_elm idref="ID1413993716"/>
-        <group_elm idref="ID1413993717"/>
-        <group_elm idref="ID1413993781"/>
-        <group_elm idref="ID1413993782"/>
-        <group_elm idref="ID1413993783"/>
-        <group_elm idref="ID1413993656"/>
-        <group_elm idref="ID1413993784"/>
-        <group_elm idref="ID1413993803"/>
-        <group_elm idref="ID1413993668"/>
-        <group_elm idref="ID1413993804"/>
-      </group>
     </page>
     <page id="ID1414018338">
       <pageattr name="Port2"/>
@@ -3794,11 +3759,11 @@ then zablokBarek=0 else true]</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">STATEK</text>
+                version="4.0.1">STATEK_PRZY_BRZEGU</text>
         </type>
         <initmark id="ID1414020714">
           <posattr x="-832.473333"
-                   y="812.537596"/>
+                   y="826.537596"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -3808,9 +3773,11 @@ then zablokBarek=0 else true]</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">1`SAR++
-1`Barka++
-5`Zaglowka</text>
+                version="4.0.1">1`(Barka, 1)++
+1`(Barka, 3)++
+2`(Zaglowka, 1)++
+1`(Zaglowka, 2)++
+2`(Zaglowka, 3)</text>
         </initmark>
       </place>
       <place id="ID1414020715">
@@ -3971,8 +3938,8 @@ then zablokBarek=0 else true]</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">1`(Barka, 2)++
-1`(Zaglowka, 50)</text>
+                version="4.0.1">1`(Barka, 0)++
+1`(Zaglowka, 44)</text>
         </initmark>
       </place>
       <place id="ID1414020724">
@@ -4028,8 +3995,8 @@ then zablokBarek=0 else true]</text>
         </initmark>
         <port id="ID1414020727"
               type="I/O">
-          <posattr x="986.000000"
-                   y="326.000000"/>
+          <posattr x="1067.000000"
+                   y="334.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -4710,6 +4677,80 @@ then zablokBarek=0 else true]</text>
                 version="4.0.1"/>
         </priority>
       </trans>
+      <trans id="ID1414213342"
+             explicit="false">
+        <posattr x="-1260.000000"
+                 y="739.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <text>Oczekiwanie</text>
+        <box w="157.065134"
+             h="77.014657"/>
+        <binding x="7.200000"
+                 y="-3.000000"/>
+        <cond id="ID1414213343">
+          <posattr x="-1260.000000"
+                   y="788.507328"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">[czasCzekania &gt; 0]</text>
+        </cond>
+        <time id="ID1414213344">
+          <posattr x="-1166.967433"
+                   y="788.507328"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1"/>
+        </time>
+        <code id="ID1414213345">
+          <posattr x="-1146.967433"
+                   y="668.492672"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1"/>
+        </code>
+        <priority id="ID1414213347">
+          <posattr x="-1376.532567"
+                   y="689.492672"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1"/>
+        </priority>
+      </trans>
       <arc id="ID1414020732"
            orientation="TtoP"
            order="1">
@@ -4728,7 +4769,7 @@ then zablokBarek=0 else true]</text>
         <transend idref="ID1414020658"/>
         <placeend idref="ID1414020712"/>
         <annot id="ID1414020733">
-          <posattr x="-877.000000"
+          <posattr x="-942.500000"
                    y="528.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
@@ -4739,7 +4780,7 @@ then zablokBarek=0 else true]</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">1`statek</text>
+                version="4.0.1">1`(statek, discrete(2, 4) : int)</text>
         </annot>
       </arc>
       <arc id="ID1414020734"
@@ -4927,7 +4968,7 @@ then zablokBarek=0 else true]</text>
                     bold="false"/>
         </bendpoint>
         <annot id="ID1414020745">
-          <posattr x="-39.000000"
+          <posattr x="94.000000"
                    y="138.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
@@ -5068,7 +5109,7 @@ then zablokBarek=0 else true]</text>
                     bold="false"/>
         </bendpoint>
         <annot id="ID1414020754">
-          <posattr x="-66.000000"
+          <posattr x="25.000000"
                    y="398.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
@@ -5338,8 +5379,8 @@ then zablokBarek=0 else true]</text>
                     bold="false"/>
         </bendpoint>
         <annot id="ID1414020772">
-          <posattr x="630.000000"
-                   y="60.000000"/>
+          <posattr x="524.000000"
+                   y="7.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -5383,7 +5424,7 @@ then zablokBarek=0 else true]</text>
                     bold="false"/>
         </bendpoint>
         <annot id="ID1414020775">
-          <posattr x="586.000000"
+          <posattr x="495.000000"
                    y="206.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
@@ -5428,7 +5469,7 @@ then zablokBarek=0 else true]</text>
                     bold="false"/>
         </bendpoint>
         <annot id="ID1414020778">
-          <posattr x="593.000000"
+          <posattr x="511.000000"
                    y="230.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
@@ -5473,8 +5514,8 @@ then zablokBarek=0 else true]</text>
                     bold="false"/>
         </bendpoint>
         <annot id="ID1414020781">
-          <posattr x="599.000000"
-                   y="135.000000"/>
+          <posattr x="510.000000"
+                   y="134.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -5521,7 +5562,7 @@ then zablokBarek=0 else true]</text>
                     bold="false"/>
         </bendpoint>
         <annot id="ID1414020784">
-          <posattr x="606.000000"
+          <posattr x="496.000000"
                    y="398.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
@@ -5702,8 +5743,8 @@ then zablokBarek=0 else true]</text>
                     bold="false"/>
         </bendpoint>
         <annot id="ID1414020796">
-          <posattr x="602.000000"
-                   y="548.000000"/>
+          <posattr x="504.000000"
+                   y="547.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -5747,8 +5788,8 @@ then zablokBarek=0 else true]</text>
                     bold="false"/>
         </bendpoint>
         <annot id="ID1414020799">
-          <posattr x="-129.000000"
-                   y="65.000000"/>
+          <posattr x="2.000000"
+                   y="0.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -5805,8 +5846,8 @@ then zablokBarek=0 else true]</text>
                     bold="false"/>
         </bendpoint>
         <annot id="ID1414020802">
-          <posattr x="-311.000000"
-                   y="333.000000"/>
+          <posattr x="-91.000000"
+                   y="-22.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -5863,8 +5904,8 @@ then zablokBarek=0 else true]</text>
                     bold="false"/>
         </bendpoint>
         <annot id="ID1414020806">
-          <posattr x="846.000000"
-                   y="320.000000"/>
+          <posattr x="578.000000"
+                   y="-38.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -5908,8 +5949,8 @@ then zablokBarek=0 else true]</text>
                     bold="false"/>
         </bendpoint>
         <annot id="ID1414020810">
-          <posattr x="549.000000"
-                   y="114.000000"/>
+          <posattr x="490.000000"
+                   y="72.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -5953,8 +5994,8 @@ then zablokBarek=0 else true]</text>
                     bold="false"/>
         </bendpoint>
         <annot id="ID1414020813">
-          <posattr x="617.000000"
-                   y="77.000000"/>
+          <posattr x="512.000000"
+                   y="32.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -5998,8 +6039,8 @@ then zablokBarek=0 else true]</text>
                     bold="false"/>
         </bendpoint>
         <annot id="ID1414020816">
-          <posattr x="-96.000000"
-                   y="86.000000"/>
+          <posattr x="-4.000000"
+                   y="31.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -6056,8 +6097,8 @@ then zablokBarek=0 else true]</text>
                     bold="false"/>
         </bendpoint>
         <annot id="ID1414020819">
-          <posattr x="858.000000"
-                   y="333.000000"/>
+          <posattr x="590.000000"
+                   y="-64.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -6101,8 +6142,8 @@ then zablokBarek=0 else true]</text>
                     bold="false"/>
         </bendpoint>
         <annot id="ID1414020823">
-          <posattr x="-42.000000"
-                   y="118.000000"/>
+          <posattr x="0.000000"
+                   y="73.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -6159,8 +6200,8 @@ then zablokBarek=0 else true]</text>
                     bold="false"/>
         </bendpoint>
         <annot id="ID1414020826">
-          <posattr x="-323.000000"
-                   y="344.000000"/>
+          <posattr x="-97.000000"
+                   y="-53.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -6204,7 +6245,7 @@ then zablokBarek=0 else true]</text>
                     bold="false"/>
         </bendpoint>
         <annot id="ID1414020830">
-          <posattr x="927.000000"
+          <posattr x="888.000000"
                    y="370.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
@@ -6260,7 +6301,7 @@ then zablokBarek=0 else true]</text>
           <textattr colour="Maroon"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">1`(SAR, 4, Port2)</text>
+                version="4.0.1">1`(SAR, 3, Port2)</text>
         </annot>
       </arc>
       <arc id="ID1414020835"
@@ -6305,7 +6346,7 @@ then zablokBarek=0 else true]</text>
           <textattr colour="Fucia"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">1`(Zaglowka, 4, portDoc)</text>
+                version="4.0.1">1`(Zaglowka, 5, portDoc)</text>
         </annot>
       </arc>
       <arc id="ID1414020838"
@@ -6427,7 +6468,7 @@ then zablokBarek=0 else true]</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">1`statek</text>
+                version="4.0.1">1`(statek, 0)</text>
         </annot>
       </arc>
       <arc id="ID1414020848"
@@ -6565,6 +6606,70 @@ then zablokBarek=0 else true]</text>
                 version="4.0.1">1`(statek, 0, Port2)</text>
         </annot>
       </arc>
+      <arc id="ID1414214367"
+           orientation="PtoT"
+           order="2">
+        <posattr x="0.000000"
+                 y="0.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <arrowattr headsize="1.200000"
+                   currentcyckle="2"/>
+        <transend idref="ID1414213342"/>
+        <placeend idref="ID1414020712"/>
+        <annot id="ID1414214368">
+          <posattr x="-1066.000000"
+                   y="758.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">1`(statek, czasCzekania)</text>
+        </annot>
+      </arc>
+      <arc id="ID1414215015"
+           orientation="TtoP"
+           order="1">
+        <posattr x="0.000000"
+                 y="0.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <arrowattr headsize="1.200000"
+                   currentcyckle="2"/>
+        <transend idref="ID1414213342"/>
+        <placeend idref="ID1414020712"/>
+        <annot id="ID1414215016">
+          <posattr x="-1066.500000"
+                   y="721.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">1`(statek, czasCzekania-1)</text>
+        </annot>
+      </arc>
       <constraints/>
     </page>
     <instances>
@@ -6602,12 +6707,12 @@ then zablokBarek=0 else true]</text>
           <boolean>true</boolean>
         </value>
       </option>
-      <option name="extensions.10003.enable">
+      <option name="extensions.10001.enable">
         <value>
           <boolean>true</boolean>
         </value>
       </option>
-      <option name="extensions.10001.enable">
+      <option name="extensions.10003.enable">
         <value>
           <boolean>true</boolean>
         </value>
@@ -6821,32 +6926,31 @@ then zablokBarek=0 else true]</text>
     <binders>
       <cpnbinder id="ID1413988725"
                  x="295"
-                 y="43"
+                 y="39"
                  width="1295"
                  height="700">
         <sheets>
-          <cpnsheet id="ID1413994606"
-                    panx="409.546875"
-                    pany="86.818750"
-                    zoom="0.800000"
-                    instance="ID1413993956">
-            <zorder>
-              <position value="1"/>
-              <position value="0"/>
-            </zorder>
-          </cpnsheet>
           <cpnsheet id="ID2215"
-                    panx="-666.005000"
-                    pany="151.417500"
+                    panx="-664.005000"
+                    pany="150.417500"
                     zoom="0.886003"
                     instance="ID2149">
             <zorder>
               <position value="0"/>
             </zorder>
           </cpnsheet>
+          <cpnsheet id="ID1413994606"
+                    panx="-437.453125"
+                    pany="-99.181250"
+                    zoom="0.800000"
+                    instance="ID1413993956">
+            <zorder>
+              <position value="0"/>
+            </zorder>
+          </cpnsheet>
           <cpnsheet id="ID1414018452"
-                    panx="118.900000"
-                    pany="394.750000"
+                    panx="-592.100000"
+                    pany="299.750000"
                     zoom="0.800000"
                     instance="ID1414018368">
             <zorder>
@@ -6944,6 +7048,7 @@ then zablokBarek=0 else true]</text>
           <IndexNode expanded="false"/>
           <IndexNode expanded="false"/>
           <IndexNode expanded="false"/>
+          <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
